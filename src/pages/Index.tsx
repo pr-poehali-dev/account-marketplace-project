@@ -51,6 +51,47 @@ const featuredProducts = [
       reviews: 203
     },
     discount: 10
+  },
+  {
+    id: 4,
+    title: "Аккаунт Fortnite | Редкие скины | 100+ Скинов | Все сезоны",
+    price: 15000,
+    image: "/placeholder.svg",
+    rating: 4.7,
+    seller: {
+      name: "FortnitePro",
+      avatar: "/placeholder.svg",
+      verified: true,
+      reviews: 85
+    }
+  },
+  {
+    id: 5,
+    title: "Dota 2 | Аккаунт 6000 MMR | Все аркана и эксклюзивные сеты",
+    price: 20000,
+    image: "/placeholder.svg",
+    rating: 4.6,
+    seller: {
+      name: "DotaMaster",
+      avatar: "/placeholder.svg",
+      verified: true,
+      reviews: 124
+    },
+    discount: 20,
+    isHot: true
+  },
+  {
+    id: 6,
+    title: "Genshin Impact | AR 60 | Все персонажи | Много 5* оружия",
+    price: 30000,
+    image: "/placeholder.svg",
+    rating: 5.0,
+    seller: {
+      name: "GenshinKing",
+      avatar: "/placeholder.svg",
+      verified: true,
+      reviews: 65
+    }
   }
 ];
 
@@ -67,25 +108,25 @@ const Index = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   return (
-    <div className="min-h-screen flex flex-col bg-custom-black">
+    <div className="min-h-screen flex flex-col bg-lox-black">
       <Header />
       
       <main className="flex-grow container max-w-7xl mx-auto px-4 py-6">
         {/* Баннер */}
-        <div className="bg-gradient-to-r from-custom-black to-custom-black-light border border-custom-green/20 rounded-lg p-6 mb-8">
+        <div className="bg-gradient-to-r from-lox-black to-lox-black-light border border-lox-blue/20 rounded-lg p-6 mb-8">
           <div className="max-w-2xl">
             <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Безопасная площадка для <span className="text-custom-green">игровых аккаунтов</span>
+              Безопасная площадка для <span className="text-lox-blue">игровых аккаунтов</span>
             </h1>
             <p className="text-gray-300 mb-6">
               Покупайте и продавайте аккаунты для сотен игр с гарантией безопасности.
               Без скрытых комиссий, с защитой от мошенников.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="bg-custom-green hover:bg-custom-green-dark text-custom-black font-medium">
+              <Button className="bg-lox-blue hover:bg-lox-blue-dark text-white font-medium">
                 Начать покупать
               </Button>
-              <Button variant="outline" className="border-custom-green text-custom-green hover:bg-custom-green hover:text-custom-black">
+              <Button variant="outline" className="border-lox-blue text-lox-blue hover:bg-lox-blue hover:text-white">
                 Начать продавать
               </Button>
             </div>
@@ -94,22 +135,22 @@ const Index = () => {
 
         {/* Три блока преимуществ */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <div className="bg-custom-black-light border border-custom-green/20 rounded-lg p-4 flex items-start">
-            <Shield className="w-10 h-10 text-custom-green mr-4 flex-shrink-0" />
+          <div className="bg-lox-black-light border border-lox-blue/20 rounded-lg p-4 flex items-start">
+            <Shield className="w-10 h-10 text-lox-blue mr-4 flex-shrink-0" />
             <div>
               <h3 className="text-white font-bold mb-2">Безопасные сделки</h3>
               <p className="text-gray-300 text-sm">Гарантия возврата средств при любых проблемах с товаром</p>
             </div>
           </div>
-          <div className="bg-custom-black-light border border-custom-green/20 rounded-lg p-4 flex items-start">
-            <CreditCard className="w-10 h-10 text-custom-green mr-4 flex-shrink-0" />
+          <div className="bg-lox-black-light border border-lox-blue/20 rounded-lg p-4 flex items-start">
+            <CreditCard className="w-10 h-10 text-lox-blue mr-4 flex-shrink-0" />
             <div>
               <h3 className="text-white font-bold mb-2">Удобные платежи</h3>
               <p className="text-gray-300 text-sm">Множество способов оплаты и быстрые выплаты продавцам</p>
             </div>
           </div>
-          <div className="bg-custom-black-light border border-custom-green/20 rounded-lg p-4 flex items-start">
-            <TrendingUp className="w-10 h-10 text-custom-green mr-4 flex-shrink-0" />
+          <div className="bg-lox-black-light border border-lox-blue/20 rounded-lg p-4 flex items-start">
+            <TrendingUp className="w-10 h-10 text-lox-blue mr-4 flex-shrink-0" />
             <div>
               <h3 className="text-white font-bold mb-2">Выгодные условия</h3>
               <p className="text-gray-300 text-sm">Комиссия всего 5% для продавцов и никаких скрытых платежей</p>
@@ -123,8 +164,8 @@ const Index = () => {
             <CategoryMenu />
             
             {/* Популярные игры */}
-            <div className="mt-6 bg-custom-black-light rounded-lg overflow-hidden border border-custom-green/20">
-              <div className="py-3 px-4 bg-custom-black border-b border-custom-green/20">
+            <div className="mt-6 bg-lox-black-light rounded-lg overflow-hidden border border-lox-blue/20">
+              <div className="py-3 px-4 bg-lox-black border-b border-lox-blue/20">
                 <h3 className="font-bold text-white">Популярные игры</h3>
               </div>
               <div className="grid grid-cols-2 gap-2 p-3">
@@ -132,10 +173,10 @@ const Index = () => {
                   <Link 
                     key={game.id}
                     to={`/category/${game.slug}`}
-                    className="flex items-center p-2 bg-custom-black/50 rounded hover:bg-custom-black transition-colors"
+                    className="flex items-center p-2 bg-lox-black/50 rounded hover:bg-lox-black transition-colors"
                   >
                     <span className="text-xl mr-2">{game.icon}</span>
-                    <span className="text-sm text-white hover:text-custom-green">{game.name}</span>
+                    <span className="text-sm text-white hover:text-lox-blue">{game.name}</span>
                   </Link>
                 ))}
               </div>
@@ -151,31 +192,31 @@ const Index = () => {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Поиск игр, предметов, аккаунтов..."
-                className="w-full py-3 px-4 pr-10 rounded-lg bg-custom-black-light border border-custom-green/20 focus:border-custom-green focus:outline-none text-white"
+                className="w-full py-3 px-4 pr-10 rounded-lg bg-lox-black-light border border-lox-blue/20 focus:border-lox-blue focus:outline-none text-white"
               />
-              <Button variant="ghost" className="absolute right-1 top-1/2 -translate-y-1/2 text-custom-green hover:text-custom-green-light hover:bg-transparent">
+              <Button variant="ghost" className="absolute right-1 top-1/2 -translate-y-1/2 text-lox-blue hover:text-lox-blue-light hover:bg-transparent">
                 <Search className="h-5 w-5" />
               </Button>
             </div>
 
             {/* Табы с категориями товаров */}
             <Tabs defaultValue="featured" className="mb-6">
-              <TabsList className="bg-custom-black-light border border-custom-green/20 w-full justify-start">
+              <TabsList className="bg-lox-black-light border border-lox-blue/20 w-full justify-start">
                 <TabsTrigger 
                   value="featured"
-                  className="data-[state=active]:bg-custom-green data-[state=active]:text-custom-black"
+                  className="data-[state=active]:bg-lox-blue data-[state=active]:text-white"
                 >
                   Популярное
                 </TabsTrigger>
                 <TabsTrigger 
                   value="new"
-                  className="data-[state=active]:bg-custom-green data-[state=active]:text-custom-black"
+                  className="data-[state=active]:bg-lox-blue data-[state=active]:text-white"
                 >
                   Новинки
                 </TabsTrigger>
                 <TabsTrigger 
                   value="sale"
-                  className="data-[state=active]:bg-custom-green data-[state=active]:text-custom-black"
+                  className="data-[state=active]:bg-lox-blue data-[state=active]:text-white"
                 >
                   Со скидкой
                 </TabsTrigger>
@@ -188,7 +229,7 @@ const Index = () => {
                   ))}
                 </div>
                 <div className="mt-4 text-center">
-                  <Button variant="outline" className="border-custom-green text-custom-green hover:bg-custom-green hover:text-custom-black">
+                  <Button variant="outline" className="border-lox-blue text-lox-blue hover:bg-lox-blue hover:text-white">
                     Смотреть все предложения
                     <ChevronRight className="ml-2 h-4 w-4" />
                   </Button>
@@ -197,7 +238,7 @@ const Index = () => {
               
               <TabsContent value="new" className="mt-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {featuredProducts.slice(1, 3).map(product => (
+                  {featuredProducts.slice(3, 6).map(product => (
                     <ProductCard key={product.id} {...product} />
                   ))}
                 </div>
@@ -213,21 +254,21 @@ const Index = () => {
             </Tabs>
             
             {/* Блок с инструкцией */}
-            <div className="bg-custom-black-light border border-custom-green/20 rounded-lg p-6 mb-6">
+            <div className="bg-lox-black-light border border-lox-blue/20 rounded-lg p-6 mb-6">
               <h2 className="text-xl font-bold text-white mb-4">Как это работает?</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="text-center">
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-custom-green text-custom-black font-bold text-xl mb-3">1</div>
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-lox-blue text-white font-bold text-xl mb-3">1</div>
                   <h3 className="font-bold text-white mb-2">Выберите товар</h3>
                   <p className="text-gray-300 text-sm">Найдите интересующий вас аккаунт или предмет</p>
                 </div>
                 <div className="text-center">
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-custom-green text-custom-black font-bold text-xl mb-3">2</div>
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-lox-blue text-white font-bold text-xl mb-3">2</div>
                   <h3 className="font-bold text-white mb-2">Оплатите покупку</h3>
                   <p className="text-gray-300 text-sm">Используйте любой удобный способ оплаты</p>
                 </div>
                 <div className="text-center">
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-custom-green text-custom-black font-bold text-xl mb-3">3</div>
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-lox-blue text-white font-bold text-xl mb-3">3</div>
                   <h3 className="font-bold text-white mb-2">Получите товар</h3>
                   <p className="text-gray-300 text-sm">Данные для входа придут вам автоматически</p>
                 </div>

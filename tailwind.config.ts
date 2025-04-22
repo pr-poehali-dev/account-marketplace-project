@@ -62,11 +62,11 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Кастомная зелено-черно-белая тема
-				custom: {
-					'green': '#4ADE80',
-					'green-dark': '#22C55E',
-					'green-light': '#86EFAC',
+				// Обновленная черно-бело-синяя тема
+				lox: {
+					'blue': '#3B82F6',
+					'blue-dark': '#2563EB',
+					'blue-light': '#60A5FA',
 					'black': '#171717',
 					'black-light': '#262626',
 					'white': '#FFFFFF',
